@@ -24,10 +24,11 @@
         cercare inoltre di scegliere alcune variabili di istanza (max 3 o 4 per classe) che possono avere senso in questa realta' e decidere le relazioni di parantela (chi estende chi);
         per ogni classe definire eventuale classe padre, variabili di istanza, costruttore, proprieta' e toString;
         instanziando le varie classi provare a stampare cercando di ottenere un log sensato-->
-        <h2>
+        <h2> 
         
 
             <?php 
+
                 //PERSON (main)
                 class Person {
                     private $name;
@@ -46,6 +47,8 @@
                         return $this -> name;
                     }
                     public function setName($name) {
+                        
+
                         $this -> name = $name;
                     }
                     //lastname
@@ -96,6 +99,7 @@
                     //rank
                     public function getRank() {
                         return $this -> rank;
+                        
                     }
                     public function setRank($rank) {
                         $this -> rank = $rank;
@@ -178,6 +182,7 @@
 
                 //output Person
                 echo "<h1>PEOPLE</h1>";
+
                 $person1 = new Person("Federico", "Barretta", "01/05/1984");
                 echo "PERSON" . "<br>" . $person1 . "<br><br>";
                 $person2 = new Person("Mario", "Cante", "23/04/1996");
@@ -187,8 +192,11 @@
 
                 echo "<br>";
                 
+
+
                 //output emplyee
                 echo "<h1>EMPLOYEES</h1>";
+
                 $employee1 = new Employee("Nicola", "Rossi", "25/07/1998", 42, "web designer", 1250);
                 echo "EMPLOYEE" . "<br>" . $employee1 . "<br><br>";
                 $employee2 = new Employee("Matteo", "Vivaldi", "03/01/1979", 12, "frontend developer", 1250);
@@ -200,6 +208,7 @@
 
                 //output boss
                 echo "<h1>BOSS</h1>";
+
                 $boss = new Boss("Mattia", "Tummolillo", "19/03/2001", 99, "999999", 8000,  7500);
                 echo $boss;
                 
