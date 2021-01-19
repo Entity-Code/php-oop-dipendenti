@@ -159,6 +159,7 @@
                         $this -> setVacancy($vacancy);
                         $this -> setSector($sector);
                         $this -> setEmployees($employees);
+                        $this -> setRal($ral);
                     }
 
                     //METODS
@@ -195,8 +196,8 @@
                         $this -> securyLvl = $securyLvl;
                     }
                     //check Ral value
-                    public function checkRalValue($ral) {
-                        if ($ral < 10.000 || $ral > 100.000) {
+                    public function setRal($ral) {
+                        if ($ral < 10000 || $ral > 100000) {
                             $e = new CheckRal('ERROR: WRONG RAL VALUE');
                             throw $e;
                         }
@@ -245,7 +246,7 @@
                         '(e)lastname',
                         '(e)dateOfBirth',
                         '1',
-                        '(e)ral',
+                        '9',
                         '(e)mainTask',
                         '(e)idCode',
                         '(e)dateOfHiring',
@@ -254,8 +255,8 @@
                         'Piero',
                         '(b)lastname',
                         '(b)dateOfBirth',
-                        '6',
-                        '999',
+                        6,
+                        100000,
                         '(b)mainTask',
                         '(b)idCode',
                         '(b)dateOfHiring',
@@ -269,10 +270,9 @@
                             $e1,
                         ]
                     );
-                } catch (SecuryLevel $e) {
+                } catch (SecuryLevel | CheckRal $e) {
+                    echo $e->getMessage();
                     echo "ERROR: SECURITY LEVEL EMPLOYEE/BOSS WRONG.<br>";   
-                } catch (CheckRal $b) {
-                    echo "ERROR: WRONG RAL VALUE";
                 }
 
 
